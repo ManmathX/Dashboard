@@ -36,21 +36,12 @@ async def lifespan(app: FastAPI):
     except ValueError as e:
         logger.warning(f"API key validation warning: {e}")
     
-    # Connect to database
-    try:
-        await db.connect()
-        logger.info("Connected to MongoDB")
-    except Exception as e:
-        logger.error(f"Failed to connect to MongoDB: {e}")
-    
     logger.info("Application startup complete")
     
     yield
     
     # Shutdown
     logger.info("Shutting down...")
-    await db.disconnect()
-    logger.info("Disconnected from MongoDB")
 
 
 # Create FastAPI app

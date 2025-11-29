@@ -23,8 +23,9 @@ class Settings(BaseSettings):
     perplexity_api_key: Optional[str] = None
     
     # Database Configuration
-    mongodb_uri: str = "mongodb://localhost:27017"
-    mongodb_database: str = "llm_evaluation"
+    # Database Configuration - REMOVED
+    # mongodb_uri: str = "mongodb://localhost:27017"
+    # mongodb_database: str = "llm_evaluation"
     
     # Judge LLM Configuration
     judge_model_provider: str = "groq"  # openai, anthropic, groq, gemini, or perplexity
@@ -50,6 +51,7 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         case_sensitive = False
+        extra = "ignore"
     
     @property
     def cors_origins_list(self) -> List[str]:

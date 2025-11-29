@@ -17,5 +17,3 @@ services:
         sync: false
       - key: GOOGLE_API_KEY
         sync: false
-      - key: MONGODB_URI
-        sync: false

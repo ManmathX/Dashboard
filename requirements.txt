@@ -9,8 +9,8 @@ openai
 anthropic
 
 # Database
-pymongo
-motor
+# pymongo
+# motor
 
 # Tokenization
 tiktoken
