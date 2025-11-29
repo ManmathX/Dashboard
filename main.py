@@ -79,12 +79,9 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 import os
 
-# Mount static files
-app.mount("/dashboard", StaticFiles(directory="dashboard"), name="dashboard")
-
-@app.get("/")
-async def read_index():
-    return FileResponse('dashboard/index.html')
+# Mount static files at the root
+# This must be after API routes to avoid conflicts
+app.mount("/", StaticFiles(directory="dashboard", html=True), name="static")
 
 
 if __name__ == "__main__":
