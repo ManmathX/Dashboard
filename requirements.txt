@@ -1,0 +1,32 @@
+# Core Framework
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+
+# LLM Providers
+openai
+anthropic
+
+# Database
+pymongo
+motor
+
+# Tokenization
+tiktoken
+
+# Utilities
+python-dotenv
+httpx
+aiohttp
+
+# Testing
+pytest
+pytest-asyncio
+pytest-cov
+
+# Optional - for advanced features
+# numpy
+# pandas
+groq
+google-generativeai

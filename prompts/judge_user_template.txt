@@ -1,0 +1,23 @@
+EVALUATE the following TARGET LLM output:
+
+=== USER PROMPT ===
+{user_prompt}
+
+=== TARGET LLM OUTPUT ===
+{target_output}
+
+=== OTHER MODEL OUTPUTS (for comparison) ===
+{other_model_outputs}
+
+=== GROUND TRUTH (if available) ===
+{ground_truth}
+
+=== METADATA ===
+Task Type: {task_type}
+Language: {language}
+Evaluation Purpose: {eval_purpose}
+
+===
+
+Analyze the TARGET LLM output using the criteria defined in your system prompt.
+Return ONLY valid JSON with the required fields.

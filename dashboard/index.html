@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Evaluation Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-content">
+                <img src="Demonic Programmer in a Dark Realm (1).svg" alt="LLM Evaluation Framework"
+                    class="header-logo">
+                <h1 class="header-title">mr mama</h1>
+                <p class="header-subtitle">its check other llm response</p>
+            </div>
+
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" data-tab="evaluate">Evaluate</button>
+            </div>
+
+            <!-- Evaluate Tab -->
+            <div class="tab-content active" id="evaluate-tab">
+                <div class="card">
+                    <h2 class="card-title">Evaluate LLM Output</h2>
+
+                    <form id="evaluateForm">
+                        <div class="form-group">
+                            <label for="promptId">Prompt ID</label>
+                            <input type="text" id="promptId" placeholder="Auto-generated if empty">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userPrompt">User Prompt *</label>
+                            <textarea id="userPrompt" rows="3" required
+                                placeholder="Enter the original prompt..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="targetOutput">Target LLM Output *</label>
+                            <textarea id="targetOutput" rows="6" required
+                                placeholder="Enter the LLM output to evaluate..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="groundTruth">Ground Truth (Optional)</label>
+                            <textarea id="groundTruth" rows="3"
+                                placeholder="Enter verified facts or sources..."></textarea>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="taskType">Task Type</label>
+                                <select id="taskType">
+                                    <option value="qa">Q&A</option>
+                                    <option value="summarization">Summarization</option>
+                                    <option value="coding">Coding</option>
+                                    <option value="reasoning">Reasoning</option>
+                                    <option value="creative">Creative</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <input type="text" id="language" value="en">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">
+                            <span id="evaluateBtn">Evaluate Output</span>
+                            <span id="evaluateLoader" class="loader" style="display: none;"></span>
+                        </button>
+                    </form>
+
+                    <!-- Results Display -->
+                    <div id="evaluationResult" class="result-container" style="display: none;">
+                        <h3>Evaluation Results</h3>
+                        <div id="resultContent"></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
